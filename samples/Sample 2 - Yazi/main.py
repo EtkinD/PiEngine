@@ -5,6 +5,7 @@ yukseklik = 600
 
 oyun = pg.Oyun("Benim İlk Oyunum", genislik, yukseklik)
 oyun.arka_plan_rengi = (68, 6, 144)
+
 sahne = pg.Sahne("ilk sahnem")
 
 yazi1 = pg.Yazi("Merhaba, dünya!")
