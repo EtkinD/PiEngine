@@ -10,3 +10,7 @@ from .keyboard_event import (
 from .mouse_event import (
     FareOlayi
     )
+
+from .event_handler import (
+    EventHandler
+    )

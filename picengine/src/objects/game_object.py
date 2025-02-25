@@ -1,10 +1,10 @@
-from ..events import KlavyeOlayi, FareOlayi
+from ..events import KlavyeOlayi, FareOlayi, EventHandler
 
 """
     Base class for all game objects
     Includes basic properties and methods
 """
-class GameObject():
+class GameObject(EventHandler):
 
     def __init__(self, x: int = 0, y: int = 0) -> None:
         self.__x = x

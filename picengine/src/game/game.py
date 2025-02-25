@@ -1,11 +1,11 @@
 from .scene import Sahne
-from ..events import KlavyeOlayi, FareOlayi
+from ..events import KlavyeOlayi, FareOlayi, EventHandler
 
 """
     Oyun sınıfı, oyunun başlığını, genişliğini ve yüksekliğini tutar.
     Ayrıca oyunun aktif sahnesini de tutar.
 """
-class Oyun():
+class Oyun(EventHandler):
     def __init__(self, baslik: str = "'picengine' Oyunu", genislik: int = 800, yukseklik: int = 600) -> None:
         self.__title = baslik
         self.__width = genislik
