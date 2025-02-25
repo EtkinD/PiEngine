@@ -1,10 +1,11 @@
+from ..base import Drawable, Updateable
 from ..objects import GameObject
 from ..events import KlavyeOlayi, FareOlayi, EventHandler
 
 """
     Sahne sınıfı, oyunun içindeki objeleri tutar ve bunları günceller ve çizer.
 """
-class Sahne(EventHandler):
+class Sahne(EventHandler, Drawable, Updateable):
     def __init__(self, isim: str = 'normal sahne', oyun_objeleri: GameObject = []) -> None:
         self.__isim = isim
         self.__game_objects: list[GameObject] = oyun_objeleri
