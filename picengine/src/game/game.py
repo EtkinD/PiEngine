@@ -49,6 +49,9 @@ class Oyun():
         self.__bg_color = value
 
     def __str__(self) -> str:
-        return f"{self.__title} ({self.__width}x{self.__height})"    
-
+        res = f"Oyun: {self.__title}"
+        if self.sahne:
+            res += f"\nSahne: {self.sahne.isim}"
+        res += f"\nEkran boyutu: ({self.__width}X{self.__height})"
+        return res
 
