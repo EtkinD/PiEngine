@@ -10,6 +10,11 @@ from .src.objects import (
     Nesne
     )
 
+from .src.events import (
+    FareOlayi,
+    KlavyeOlayi
+    )
+
 from .src.print import (
     game_print,
     print_objs
