@@ -11,6 +11,6 @@ def game_print(*args: object, sep: str = ' ', end: str = '', **kwargs: object) -
         oprint(*args, sep=sep, end=end) # type: ignore
         return
 
-    obj: str = sep.join([str(o) for o in args]) + '\n'
+    obj: str = (sep.join([str(o) for o in args]) + (end if end else '\n')).replace('\t', ' '*4)
     print_objs.append(Yazi(yazi=obj))
 
