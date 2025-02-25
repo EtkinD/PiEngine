@@ -29,5 +29,6 @@ def baslat(oyun: Oyun = None):
 # Bind print to game_print
 import builtins
 builtins.oprint = print
+oprint = print
 builtins.print = game_print
 print = game_print
