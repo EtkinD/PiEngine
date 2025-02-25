@@ -7,6 +7,8 @@ color1 = [45, 78, 181] # #2d4eb5
 color2 = [68, 6, 144]  # #440690
 gradient = True
 window_margin = 20
+min_window_width = 400
+min_window_height = 300
 
 
 def _setup(print_objs: list[Yazi]):
@@ -15,6 +17,7 @@ def _setup(print_objs: list[Yazi]):
     _text_max_width = 0
     for obj in print_objs:
         _text_max_width = max(_text_max_width, obj.genislik)
+    _text_max_width = max(_text_max_width, min_window_width)
     
     # Get the total height of the texts
     _total_text_height = max((len(print_objs) - 1), 0)
@@ -25,6 +28,7 @@ def _setup(print_objs: list[Yazi]):
         obj.x = x
         obj.y = y
         y += obj.yukseklik
+    _total_text_height = max(_total_text_height, min_window_height)
 
     # Set the display size
     sizes = (_text_max_width + window_margin * 2, _total_text_height + window_margin * 2)
