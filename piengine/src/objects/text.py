@@ -10,7 +10,7 @@ pygame.font.init()
 """
 class Yazi(GameObject):
 
-    def __init__(self, yazi: str = "'picengine' Oyunu", x: int = 0, y: int = 0, yazi_boyutu: int = 24) -> None:
+    def __init__(self, yazi: str = "'piengine' Oyunu", x: int = 0, y: int = 0, yazi_boyutu: int = 24) -> None:
         super().__init__(x, y)
         self.__original_text = yazi
         self.__font = pygame.font.Font(None, yazi_boyutu)

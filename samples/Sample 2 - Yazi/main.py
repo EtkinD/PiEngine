@@ -1,4 +1,4 @@
-import picengine as pg
+import piengine as pg
 
 genislik = 800
 yukseklik = 600

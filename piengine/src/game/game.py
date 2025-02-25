@@ -7,7 +7,7 @@ from ..events import KlavyeOlayi, FareOlayi, EventHandler
     Ayrıca oyunun aktif sahnesini de tutar.
 """
 class Oyun(EventHandler, Drawable, Updateable):
-    def __init__(self, baslik: str = "'picengine' Oyunu", genislik: int = 800, yukseklik: int = 600) -> None:
+    def __init__(self, baslik: str = "'piengine' Oyunu", genislik: int = 800, yukseklik: int = 600) -> None:
         self.__title = baslik
         self.__width = genislik
         self.__height = yukseklik

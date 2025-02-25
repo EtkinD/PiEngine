@@ -1,4 +1,4 @@
-import picengine as pg
+import piengine as pg
 
 print("Merhaba!", end='\n\tBenim adım Python!\n')
 print("\tBu benim ilk görsel programım.")

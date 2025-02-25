@@ -30,7 +30,7 @@ def _setup(print_objs: list[Yazi]):
     sizes = (_text_max_width + window_margin * 2, _total_text_height + window_margin * 2)
     main_display = pygame.display.set_mode(sizes)
 
-    pygame.display.set_caption("PicEngine")
+    pygame.display.set_caption("PiEngine")
 
     return main_display
 
