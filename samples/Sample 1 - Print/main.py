@@ -5,4 +5,4 @@ print("Bu benim ilk görsel programım.")
 print("Bu", "programı", "yazarken", "çok", "eğlendim.", sep='-')
 pg.print("Umarım siz de eğlenirsiniz.\nİyi eğlenceler!")
 
-pg.goster()
+pg.baslat()

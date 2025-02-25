@@ -15,14 +15,15 @@ from .src.print import (
     print_objs
     )
 
-def goster():
-    from .src.printloop import start
-    start(print_objs)
 
-
-def baslat(oyun: Oyun):
-    from .src.mainloop import start
-    start(oyun)
+def baslat(oyun: Oyun = None):
+    if len(print_objs) > 0:
+        from .src.printloop import start
+        start(print_objs)
+    
+    if oyun:
+        from .src.mainloop import start
+        start(oyun)
 
 
 # Bind print to game_print
