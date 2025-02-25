@@ -1,4 +1,5 @@
 from ..objects import GameObject
+from ..events import KlavyeOlayi, FareOlayi
 
 """
     Sahne sınıfı, oyunun içindeki objeleri tutar ve bunları günceller ve çizer.
@@ -15,6 +16,14 @@ class Sahne():
     def ciz(self) -> None:
         for obje in self.__game_objects:
             obje.ciz()
+
+    def klavye_olayi(self, olay: KlavyeOlayi) -> None:
+        for obje in self.__game_objects:
+            obje.klavye_olayi(olay)
+
+    def fare_olayi(self, olay: FareOlayi) -> None:
+        for obje in self.__game_objects:
+            obje.fare_olayi(olay)
 
     def ekle(self, nesne: GameObject) -> None:
         self.__game_objects.append(nesne)

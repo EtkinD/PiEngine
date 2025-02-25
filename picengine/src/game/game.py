@@ -1,4 +1,5 @@
 from .scene import Sahne
+from ..events import KlavyeOlayi, FareOlayi
 
 """
     Oyun sınıfı, oyunun başlığını, genişliğini ve yüksekliğini tutar.
@@ -19,6 +20,14 @@ class Oyun():
     def ciz(self) -> None:
         if self.sahne:
             self.sahne.ciz()
+
+    def klavye_olayi(self, olay: KlavyeOlayi) -> None:
+        if self.sahne:
+            self.sahne.klavye_olayi(olay)
+
+    def fare_olayi(self, olay: FareOlayi) -> None:
+        if self.sahne:
+            self.sahne.fare_olayi(olay)
 
     @property
     def baslik(self) -> str:
