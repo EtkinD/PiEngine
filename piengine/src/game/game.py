@@ -1,12 +1,12 @@
 from ..base import Drawable, Updateable
 from .scene import Sahne
-from ..events import KlavyeOlayi, FareOlayi, EventHandler
+from ..events import EventDispatcher
 
 """
     Oyun sınıfı, oyunun başlığını, genişliğini ve yüksekliğini tutar.
     Ayrıca oyunun aktif sahnesini de tutar.
 """
-class Oyun(EventHandler, Drawable, Updateable):
+class Oyun(EventDispatcher, Drawable, Updateable):
     def __init__(self, baslik: str = "'piengine' Oyunu", genislik: int = 800, yukseklik: int = 600) -> None:
         self.__title = baslik
         self.__width = genislik
@@ -21,14 +21,6 @@ class Oyun(EventHandler, Drawable, Updateable):
     def ciz(self) -> None:
         if self.sahne:
             self.sahne.ciz()
-
-    def klavye_olayi(self, olay: KlavyeOlayi) -> None:
-        if self.sahne:
-            self.sahne.klavye_olayi(olay)
-
-    def fare_olayi(self, olay: FareOlayi) -> None:
-        if self.sahne:
-            self.sahne.fare_olayi(olay)
 
     @property
     def baslik(self) -> str:
@@ -48,7 +40,10 @@ class Oyun(EventHandler, Drawable, Updateable):
     
     @sahne.setter
     def sahne(self, value: Sahne) -> None:
+        if self.__scene:
+            self.remove_event_listener(self.__scene)
         self.__scene = value
+        self.add_event_listener(value)
 
     @property
     def arka_plan_rengi(self) -> tuple[int, int, int]:

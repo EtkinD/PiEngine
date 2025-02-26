@@ -1,14 +1,16 @@
 from ..base import Drawable, Updateable
 from ..objects import GameObject
-from ..events import KlavyeOlayi, FareOlayi, EventHandler
+from ..events import EventEmitter, EventDispatcher
 
 """
     Sahne sınıfı, oyunun içindeki objeleri tutar ve bunları günceller ve çizer.
 """
-class Sahne(EventHandler, Drawable, Updateable):
+class Sahne(EventEmitter, EventDispatcher, Drawable, Updateable):
     def __init__(self, isim: str = 'normal sahne', oyun_objeleri: list[GameObject] = []) -> None:
         self.__isim = isim
         self.__game_objects: list[GameObject] = oyun_objeleri
+        for obj in self.__game_objects:
+            self.add_event_listener(obj)
 
     def guncelle(self, dt: float) -> None:
         for obje in self.__game_objects:
@@ -18,16 +20,9 @@ class Sahne(EventHandler, Drawable, Updateable):
         for obje in self.__game_objects:
             obje.ciz()
 
-    def klavye_olayi(self, olay: KlavyeOlayi) -> None:
-        for obje in self.__game_objects:
-            obje.klavye_olayi(olay)
-
-    def fare_olayi(self, olay: FareOlayi) -> None:
-        for obje in self.__game_objects:
-            obje.fare_olayi(olay)
-
     def ekle(self, nesne: GameObject) -> None:
         self.__game_objects.append(nesne)
+        self.add_event_listener(nesne)
 
     @property
     def objeler(self) -> list[GameObject]:

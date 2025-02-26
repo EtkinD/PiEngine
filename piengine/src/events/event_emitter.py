@@ -1,10 +1,10 @@
 from . import KlavyeOlayi, FareOlayi
 
 """
-    Base class for all event handlers
+    Base class for all event emitters
     Includes virtual methods for handling events
 """
-class EventHandler():
+class EventEmitter():
     def klavye_olayi(self, olay: KlavyeOlayi) -> None:
         """
             Virtual method to

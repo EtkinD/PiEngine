@@ -1,11 +1,11 @@
 from ..base import Drawable, Updateable
-from ..events import KlavyeOlayi, FareOlayi, EventHandler
+from ..events import EventEmitter
 
 """
     Base class for all game objects
     Includes basic properties and methods
 """
-class GameObject(EventHandler, Drawable, Updateable):
+class GameObject(EventEmitter, Drawable, Updateable):
 
     def __init__(self, x: int = 0, y: int = 0) -> None:
         self.__x = x

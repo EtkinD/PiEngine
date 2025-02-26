@@ -11,6 +11,10 @@ from .mouse_event import (
     FareOlayi
     )
 
-from .event_handler import (
-    EventHandler
+from .event_emitter import (
+    EventEmitter
+    )
+
+from .event_dispatcher import (
+    EventDispatcher
     )
