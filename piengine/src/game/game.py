@@ -51,7 +51,11 @@ class Oyun(EventDispatcher, Drawable, Updateable):
     
     @arka_plan_rengi.setter
     def arka_plan_rengi(self, value: tuple[int, int, int]) -> None:
-        self.__bg_color = value
+        self.__bg_color = (
+            min(max(value[0], 0), 255),
+            min(max(value[1], 0), 255),
+            min(max(value[2], 0), 255)
+            )
 
     def __str__(self) -> str:
         res = f"Oyun: {self.__title}"
